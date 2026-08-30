@@ -1,0 +1,312 @@
+<!doctype html><html lang="he" dir="rtl"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>בחירת תמונות רבנים להדפסה</title>
+<style>*{box-sizing:border-box}
+body{margin:0;font-family:'Segoe UI',Arial,sans-serif;background:#f4f6f8;color:#1c2430;line-height:1.55}
+header{background:#1a3a5c;color:#fff;padding:18px 20px}
+header h1{margin:0;font-size:20px}
+header p{margin:6px 0 0;font-size:14px;opacity:.92}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px 150px}
+.search{margin:16px 0 4px}
+.search input{width:100%;padding:11px 14px;font-size:15px;border:1px solid #cfd6de;border-radius:8px;font-family:inherit}
+h2{font-size:17px;color:#1a3a5c;margin:26px 0 10px;padding-bottom:6px;border-bottom:2px solid #dde4ec}
+h2 small{font-weight:normal;color:#8a95a3;font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(142px,1fr));gap:12px}
+.card{position:relative;background:#fff;border:2px solid #e2e8ef;border-radius:10px;padding:8px;
+cursor:pointer;display:flex;flex-direction:column;align-items:center;transition:.12s}
+.card:hover{border-color:#9db4cc}
+.card input{position:absolute;opacity:0;pointer-events:none}
+.card img{width:100%;height:132px;object-fit:contain;border-radius:6px;background:#fafbfc}
+.cap{font-size:12.5px;text-align:center;margin-top:7px;line-height:1.35;word-break:break-word}
+.cap em{display:block;font-style:normal;color:#95a0ad;font-size:11px}
+.tick{position:absolute;top:6px;left:6px;width:26px;height:26px;border-radius:50%;background:#1a7f4b;
+color:#fff;font-size:15px;display:none;align-items:center;justify-content:center;font-weight:bold}
+.card.on{border-color:#1a7f4b;background:#f2fbf6}
+.card.on .tick{display:flex}
+.card.hide{display:none}
+#bar{position:fixed;bottom:0;right:0;left:0;background:#fff;border-top:1px solid #d8e0e8;
+box-shadow:0 -3px 14px rgba(0,0,0,.09);padding:12px 16px;z-index:9}
+#bar .inner{max-width:1180px;margin:0 auto;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+#count{font-weight:bold;font-size:15px;color:#1a3a5c;margin-right:auto}
+button{font-family:inherit;font-size:14.5px;padding:10px 18px;border-radius:8px;border:0;cursor:pointer;font-weight:600}
+.pri{background:#1a7f4b;color:#fff}.sec{background:#e8edf3;color:#26415c}
+.lnk{background:none;color:#7b8794;font-weight:normal}
+#out textarea{width:100%;height:130px;font-family:inherit;font-size:13px;padding:10px;
+border:1px solid #cfd6de;border-radius:8px;direction:rtl}
+@media print{#bar,.search,header p{display:none}.card:not(.on){display:none}}</style></head><body>
+<header><h1>בחירת תמונות רבנים להדפסה</h1>
+<p>לוחצים על כל תמונה שרוצים להדפיס — היא מסומנת בירוק. בסיום לוחצים «סיימתי» בסרגל התחתון.
+הסימונים נשמרים במכשיר, אפשר לחזור ולהמשיך.</p></header>
+<div class="wrap">
+<div class="search"><input id="q" placeholder="חיפוש לפי שם…  (למשל: שך, בעלז, קנייבסקי)"></div>
+<h2 id="gdolim">א. גדולי ישראל וראשי ישיבות <small>122 תמונות</small></h2>
+<div class="grid">
+<label class="card" data-n="בעל הסולם"><input type="checkbox" value="53f23fe54f" data-name="בעל הסולם"><img loading="lazy" src="img/53f23fe54f.jpg" alt=""><span class="cap">בעל הסולם</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגר&quot;ש פישר (1 מתוך 2)"><input type="checkbox" value="05755ffc55" data-name="הגר&quot;ש פישר (1 מתוך 2)"><img loading="lazy" src="img/05755ffc55.jpg" alt=""><span class="cap">הגר&quot;ש פישר<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגר&quot;ש פישר (2 מתוך 2)"><input type="checkbox" value="679acdea25" data-name="הגר&quot;ש פישר (2 מתוך 2)"><img loading="lazy" src="img/679acdea25.jpg" alt=""><span class="cap">הגר&quot;ש פישר<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגרי&quot;י פישר (1 מתוך 2)"><input type="checkbox" value="a9b30daa3b" data-name="הגרי&quot;י פישר (1 מתוך 2)"><img loading="lazy" src="img/a9b30daa3b.jpg" alt=""><span class="cap">הגרי&quot;י פישר<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגרי&quot;י פישר (2 מתוך 2)"><input type="checkbox" value="269599d28c" data-name="הגרי&quot;י פישר (2 מתוך 2)"><img loading="lazy" src="img/269599d28c.jpg" alt=""><span class="cap">הגרי&quot;י פישר<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגרש&quot;ז אוירבאך (1 מתוך 5)"><input type="checkbox" value="33aa404b2d" data-name="הגרש&quot;ז אוירבאך (1 מתוך 5)"><img loading="lazy" src="img/33aa404b2d.jpg" alt=""><span class="cap">הגרש&quot;ז אוירבאך<em>1 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגרש&quot;ז אוירבאך (2 מתוך 5)"><input type="checkbox" value="fa995749d5" data-name="הגרש&quot;ז אוירבאך (2 מתוך 5)"><img loading="lazy" src="img/fa995749d5.jpg" alt=""><span class="cap">הגרש&quot;ז אוירבאך<em>2 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגרש&quot;ז אוירבאך (3 מתוך 5)"><input type="checkbox" value="556a965adf" data-name="הגרש&quot;ז אוירבאך (3 מתוך 5)"><img loading="lazy" src="img/556a965adf.jpg" alt=""><span class="cap">הגרש&quot;ז אוירבאך<em>3 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגרש&quot;ז אוירבאך (4 מתוך 5)"><input type="checkbox" value="6adcd24103" data-name="הגרש&quot;ז אוירבאך (4 מתוך 5)"><img loading="lazy" src="img/6adcd24103.jpg" alt=""><span class="cap">הגרש&quot;ז אוירבאך<em>4 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגרש&quot;ז אוירבאך (5 מתוך 5)"><input type="checkbox" value="8ee6a70f2f" data-name="הגרש&quot;ז אוירבאך (5 מתוך 5)"><img loading="lazy" src="img/8ee6a70f2f.jpg" alt=""><span class="cap">הגרש&quot;ז אוירבאך<em>5 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="החזון איש (1 מתוך 4)"><input type="checkbox" value="a71af2b690" data-name="החזון איש (1 מתוך 4)"><img loading="lazy" src="img/a71af2b690.jpg" alt=""><span class="cap">החזון איש<em>1 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="החזון איש (2 מתוך 4)"><input type="checkbox" value="635c8451ed" data-name="החזון איש (2 מתוך 4)"><img loading="lazy" src="img/635c8451ed.jpg" alt=""><span class="cap">החזון איש<em>2 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="החזון איש (3 מתוך 4)"><input type="checkbox" value="9afc5fd724" data-name="החזון איש (3 מתוך 4)"><img loading="lazy" src="img/9afc5fd724.jpg" alt=""><span class="cap">החזון איש<em>3 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="החזון איש (4 מתוך 4)"><input type="checkbox" value="269aed91fb" data-name="החזון איש (4 מתוך 4)"><img loading="lazy" src="img/269aed91fb.jpg" alt=""><span class="cap">החזון איש<em>4 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="החפץ חיים (1 מתוך 2)"><input type="checkbox" value="65bc898243" data-name="החפץ חיים (1 מתוך 2)"><img loading="lazy" src="img/65bc898243.jpg" alt=""><span class="cap">החפץ חיים<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="החפץ חיים (2 מתוך 2)"><input type="checkbox" value="5fa4c25abb" data-name="החפץ חיים (2 מתוך 2)"><img loading="lazy" src="img/5fa4c25abb.jpg" alt=""><span class="cap">החפץ חיים<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הסטייפלר (1 מתוך 3)"><input type="checkbox" value="b08cc0e64a" data-name="הסטייפלר (1 מתוך 3)"><img loading="lazy" src="img/b08cc0e64a.jpg" alt=""><span class="cap">הסטייפלר<em>1 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הסטייפלר (2 מתוך 3)"><input type="checkbox" value="b101a015d3" data-name="הסטייפלר (2 מתוך 3)"><img loading="lazy" src="img/b101a015d3.jpg" alt=""><span class="cap">הסטייפלר<em>2 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הסטייפלר (3 מתוך 3)"><input type="checkbox" value="b0bb7e1b8d" data-name="הסטייפלר (3 מתוך 3)"><img loading="lazy" src="img/b0bb7e1b8d.jpg" alt=""><span class="cap">הסטייפלר<em>3 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אבא שאול"><input type="checkbox" value="b22300d5d4" data-name="הרב אבא שאול"><img loading="lazy" src="img/b22300d5d4.jpg" alt=""><span class="cap">הרב אבא שאול</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אביגדור מיללער"><input type="checkbox" value="e8b308715e" data-name="הרב אביגדור מיללער"><img loading="lazy" src="img/e8b308715e.jpg" alt=""><span class="cap">הרב אביגדור מיללער</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אברהם יהושע סולוביציק"><input type="checkbox" value="98236f6f20" data-name="הרב אברהם יהושע סולוביציק"><img loading="lazy" src="img/98236f6f20.jpg" alt=""><span class="cap">הרב אברהם יהושע סולוביציק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אהרן כהן-חברון"><input type="checkbox" value="cff6f9537e" data-name="הרב אהרן כהן-חברון"><img loading="lazy" src="img/cff6f9537e.jpg" alt=""><span class="cap">הרב אהרן כהן-חברון</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אהרן סולוביציק"><input type="checkbox" value="710efc69e7" data-name="הרב אהרן סולוביציק"><img loading="lazy" src="img/710efc69e7.jpg" alt=""><span class="cap">הרב אהרן סולוביציק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אוליפנט"><input type="checkbox" value="93108a8971" data-name="הרב אוליפנט"><img loading="lazy" src="img/93108a8971.jpg" alt=""><span class="cap">הרב אוליפנט</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אונגר"><input type="checkbox" value="5b3b0d3ee0" data-name="הרב אונגר"><img loading="lazy" src="img/5b3b0d3ee0.jpg" alt=""><span class="cap">הרב אונגר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אליהו חזן"><input type="checkbox" value="8dd88eea12" data-name="הרב אליהו חזן"><img loading="lazy" src="img/8dd88eea12.jpg" alt=""><span class="cap">הרב אליהו חזן</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אלישיב (1 מתוך 5)"><input type="checkbox" value="190288f0ac" data-name="הרב אלישיב (1 מתוך 5)"><img loading="lazy" src="img/190288f0ac.jpg" alt=""><span class="cap">הרב אלישיב<em>1 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אלישיב (2 מתוך 5)"><input type="checkbox" value="636432f3f8" data-name="הרב אלישיב (2 מתוך 5)"><img loading="lazy" src="img/636432f3f8.jpg" alt=""><span class="cap">הרב אלישיב<em>2 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אלישיב (3 מתוך 5)"><input type="checkbox" value="93af0cb3b8" data-name="הרב אלישיב (3 מתוך 5)"><img loading="lazy" src="img/93af0cb3b8.jpg" alt=""><span class="cap">הרב אלישיב<em>3 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אלישיב (4 מתוך 5)"><input type="checkbox" value="8c538a15e9" data-name="הרב אלישיב (4 מתוך 5)"><img loading="lazy" src="img/8c538a15e9.jpg" alt=""><span class="cap">הרב אלישיב<em>4 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אלישיב (5 מתוך 5)"><input type="checkbox" value="40bc001c69" data-name="הרב אלישיב (5 מתוך 5)"><img loading="lazy" src="img/40bc001c69.jpg" alt=""><span class="cap">הרב אלישיב<em>5 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אמנון יצחק"><input type="checkbox" value="e54ac95ac2" data-name="הרב אמנון יצחק"><img loading="lazy" src="img/e54ac95ac2.jpg" alt=""><span class="cap">הרב אמנון יצחק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב בנימין זילבר (1 מתוך 2)"><input type="checkbox" value="c0137871b1" data-name="הרב בנימין זילבר (1 מתוך 2)"><img loading="lazy" src="img/c0137871b1.jpg" alt=""><span class="cap">הרב בנימין זילבר<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב בנימין זילבר (2 מתוך 2)"><input type="checkbox" value="eb4c580c26" data-name="הרב בנימין זילבר (2 מתוך 2)"><img loading="lazy" src="img/eb4c580c26.jpg" alt=""><span class="cap">הרב בנימין זילבר<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב ברוך סורוצקין"><input type="checkbox" value="2c0c0272ca" data-name="הרב ברוך סורוצקין"><img loading="lazy" src="img/2c0c0272ca.jpg" alt=""><span class="cap">הרב ברוך סורוצקין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב גוטסמן"><input type="checkbox" value="7f9524dd80" data-name="הרב גוטסמן"><img loading="lazy" src="img/7f9524dd80.jpg" alt=""><span class="cap">הרב גוטסמן</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב גריינמן"><input type="checkbox" value="ee9d7e548e" data-name="הרב גריינמן"><img loading="lazy" src="img/ee9d7e548e.jpg" alt=""><span class="cap">הרב גריינמן</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב גרינוואלד"><input type="checkbox" value="e90944396e" data-name="הרב גרינוואלד"><img loading="lazy" src="img/e90944396e.jpg" alt=""><span class="cap">הרב גרינוואלד</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב דב פוברסקי (1 מתוך 2)"><input type="checkbox" value="fcfce2966e" data-name="הרב דב פוברסקי (1 מתוך 2)"><img loading="lazy" src="img/fcfce2966e.jpg" alt=""><span class="cap">הרב דב פוברסקי<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב דב פוברסקי (2 מתוך 2)"><input type="checkbox" value="e2b4a342c2" data-name="הרב דב פוברסקי (2 מתוך 2)"><img loading="lazy" src="img/e2b4a342c2.jpg" alt=""><span class="cap">הרב דב פוברסקי<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב דוד ליפשיץ"><input type="checkbox" value="28893414ef" data-name="הרב דוד ליפשיץ"><img loading="lazy" src="img/28893414ef.jpg" alt=""><span class="cap">הרב דוד ליפשיץ</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב דוד סולוויציק"><input type="checkbox" value="1057fa6bbb" data-name="הרב דוד סולוויציק"><img loading="lazy" src="img/1057fa6bbb.jpg" alt=""><span class="cap">הרב דוד סולוויציק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב דסלר"><input type="checkbox" value="9143c134d4" data-name="הרב דסלר"><img loading="lazy" src="img/9143c134d4.jpg" alt=""><span class="cap">הרב דסלר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב הנקין"><input type="checkbox" value="2dd2b7b75b" data-name="הרב הנקין"><img loading="lazy" src="img/2dd2b7b75b.jpg" alt=""><span class="cap">הרב הנקין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב ווזנר"><input type="checkbox" value="fd21560ad3" data-name="הרב ווזנר"><img loading="lazy" src="img/fd21560ad3.jpg" alt=""><span class="cap">הרב ווזנר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב וויס"><input type="checkbox" value="31e404236f" data-name="הרב וויס"><img loading="lazy" src="img/31e404236f.jpg" alt=""><span class="cap">הרב וויס</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב וולבה"><input type="checkbox" value="c53274ec5b" data-name="הרב וולבה"><img loading="lazy" src="img/c53274ec5b.jpg" alt=""><span class="cap">הרב וולבה</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב זוננפלד"><input type="checkbox" value="3150ebade6" data-name="הרב זוננפלד"><img loading="lazy" src="img/3150ebade6.jpg" alt=""><span class="cap">הרב זוננפלד</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב זלזניק"><input type="checkbox" value="1568b71362" data-name="הרב זלזניק"><img loading="lazy" src="img/1568b71362.jpg" alt=""><span class="cap">הרב זלזניק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב חיים קנייבסקי (1 מתוך 4)"><input type="checkbox" value="2f04debddc" data-name="הרב חיים קנייבסקי (1 מתוך 4)"><img loading="lazy" src="img/2f04debddc.jpg" alt=""><span class="cap">הרב חיים קנייבסקי<em>1 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב חיים קנייבסקי (2 מתוך 4)"><input type="checkbox" value="8204118fe3" data-name="הרב חיים קנייבסקי (2 מתוך 4)"><img loading="lazy" src="img/8204118fe3.jpg" alt=""><span class="cap">הרב חיים קנייבסקי<em>2 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב חיים קנייבסקי (3 מתוך 4)"><input type="checkbox" value="e7acdee09b" data-name="הרב חיים קנייבסקי (3 מתוך 4)"><img loading="lazy" src="img/e7acdee09b.jpg" alt=""><span class="cap">הרב חיים קנייבסקי<em>3 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב חיים קנייבסקי (4 מתוך 4)"><input type="checkbox" value="67360fc5da" data-name="הרב חיים קנייבסקי (4 מתוך 4)"><img loading="lazy" src="img/67360fc5da.jpg" alt=""><span class="cap">הרב חיים קנייבסקי<em>4 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב חשין"><input type="checkbox" value="fc17010d68" data-name="הרב חשין"><img loading="lazy" src="img/fc17010d68.jpg" alt=""><span class="cap">הרב חשין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב י. הדס"><input type="checkbox" value="f08da31e26" data-name="הרב י. הדס"><img loading="lazy" src="img/f08da31e26.jpg" alt=""><span class="cap">הרב י. הדס</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב י.מ. דושינסקי"><input type="checkbox" value="10ffd775cd" data-name="הרב י.מ. דושינסקי"><img loading="lazy" src="img/10ffd775cd.jpg" alt=""><span class="cap">הרב י.מ. דושינסקי</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב יהודה סגל"><input type="checkbox" value="2ed449d005" data-name="הרב יהודה סגל"><img loading="lazy" src="img/2ed449d005.jpg" alt=""><span class="cap">הרב יהודה סגל</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב יהושע בר (בריסק)"><input type="checkbox" value="431ec9701b" data-name="הרב יהושע בר (בריסק)"><img loading="lazy" src="img/431ec9701b.jpg" alt=""><span class="cap">הרב יהושע בר (בריסק)</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב יוספי"><input type="checkbox" value="a3dc721016" data-name="הרב יוספי"><img loading="lazy" src="img/a3dc721016.jpg" alt=""><span class="cap">הרב יוספי</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב יחיאל מיכל פיינשטיין"><input type="checkbox" value="be742681da" data-name="הרב יחיאל מיכל פיינשטיין"><img loading="lazy" src="img/be742681da.jpg" alt=""><span class="cap">הרב יחיאל מיכל פיינשטיין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב יעקב גלינסקי"><input type="checkbox" value="f8d1151bc6" data-name="הרב יעקב גלינסקי"><img loading="lazy" src="img/f8d1151bc6.jpg" alt=""><span class="cap">הרב יעקב גלינסקי</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב ישכר מאיר"><input type="checkbox" value="26aa34399e" data-name="הרב ישכר מאיר"><img loading="lazy" src="img/26aa34399e.jpg" alt=""><span class="cap">הרב ישכר מאיר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב כהנמן (פוניבז&#x27;)"><input type="checkbox" value="8e83916f3e" data-name="הרב כהנמן (פוניבז&#x27;)"><img loading="lazy" src="img/8e83916f3e.jpg" alt=""><span class="cap">הרב כהנמן (פוניבז&#x27;)</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב לוי ברייער"><input type="checkbox" value="8fa9bd1c57" data-name="הרב לוי ברייער"><img loading="lazy" src="img/8fa9bd1c57.jpg" alt=""><span class="cap">הרב לוי ברייער</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב לוינשטיין"><input type="checkbox" value="d0446f729a" data-name="הרב לוינשטיין"><img loading="lazy" src="img/d0446f729a.jpg" alt=""><span class="cap">הרב לוינשטיין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב מ. מאטסדורף"><input type="checkbox" value="0d44138daa" data-name="הרב מ. מאטסדורף"><img loading="lazy" src="img/0d44138daa.jpg" alt=""><span class="cap">הרב מ. מאטסדורף</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב מאיר חדש"><input type="checkbox" value="031ad6e5fb" data-name="הרב מאיר חדש"><img loading="lazy" src="img/031ad6e5fb.jpg" alt=""><span class="cap">הרב מאיר חדש</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב מאשש"><input type="checkbox" value="0e58b145f5" data-name="הרב מאשש"><img loading="lazy" src="img/0e58b145f5.jpg" alt=""><span class="cap">הרב מאשש</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב מייזליש"><input type="checkbox" value="ce1732eb41" data-name="הרב מייזליש"><img loading="lazy" src="img/ce1732eb41.jpg" alt=""><span class="cap">הרב מייזליש</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב מרדכי אליהו"><input type="checkbox" value="82b62c99d6" data-name="הרב מרדכי אליהו"><img loading="lazy" src="img/82b62c99d6.jpg" alt=""><span class="cap">הרב מרדכי אליהו</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה חברוני"><input type="checkbox" value="f29c9594ca" data-name="הרב משה חברוני"><img loading="lazy" src="img/f29c9594ca.jpg" alt=""><span class="cap">הרב משה חברוני</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה סאלוויציק"><input type="checkbox" value="b09faa2f95" data-name="הרב משה סאלוויציק"><img loading="lazy" src="img/b09faa2f95.jpg" alt=""><span class="cap">הרב משה סאלוויציק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה פיינשטיין (1 מתוך 4)"><input type="checkbox" value="b3df614e9d" data-name="הרב משה פיינשטיין (1 מתוך 4)"><img loading="lazy" src="img/b3df614e9d.jpg" alt=""><span class="cap">הרב משה פיינשטיין<em>1 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה פיינשטיין (2 מתוך 4)"><input type="checkbox" value="951c46d73e" data-name="הרב משה פיינשטיין (2 מתוך 4)"><img loading="lazy" src="img/951c46d73e.jpg" alt=""><span class="cap">הרב משה פיינשטיין<em>2 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה פיינשטיין (3 מתוך 4)"><input type="checkbox" value="8fa5ed63b1" data-name="הרב משה פיינשטיין (3 מתוך 4)"><img loading="lazy" src="img/8fa5ed63b1.jpg" alt=""><span class="cap">הרב משה פיינשטיין<em>3 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה פיינשטיין (4 מתוך 4)"><input type="checkbox" value="3734e07200" data-name="הרב משה פיינשטיין (4 מתוך 4)"><img loading="lazy" src="img/3734e07200.jpg" alt=""><span class="cap">הרב משה פיינשטיין<em>4 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה פריינד"><input type="checkbox" value="ae26be245c" data-name="הרב משה פריינד"><img loading="lazy" src="img/ae26be245c.jpg" alt=""><span class="cap">הרב משה פריינד</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה שטרנבוך"><input type="checkbox" value="f7052ec568" data-name="הרב משה שטרנבוך"><img loading="lazy" src="img/f7052ec568.jpg" alt=""><span class="cap">הרב משה שטרנבוך</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב נ. ברנדויין"><input type="checkbox" value="c441221698" data-name="הרב נ. ברנדויין"><img loading="lazy" src="img/c441221698.jpg" alt=""><span class="cap">הרב נ. ברנדויין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב נ.צ. פינקל"><input type="checkbox" value="54ad0c8638" data-name="הרב נ.צ. פינקל"><img loading="lazy" src="img/54ad0c8638.jpg" alt=""><span class="cap">הרב נ.צ. פינקל</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב נחום פרצוביץ"><input type="checkbox" value="bf627be036" data-name="הרב נחום פרצוביץ"><img loading="lazy" src="img/bf627be036.jpg" alt=""><span class="cap">הרב נחום פרצוביץ</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב ניישלס"><input type="checkbox" value="4279e4b0f0" data-name="הרב ניישלס"><img loading="lazy" src="img/4279e4b0f0.jpg" alt=""><span class="cap">הרב ניישלס</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב ניסים קרליץ"><input type="checkbox" value="3446cbda85" data-name="הרב ניסים קרליץ"><img loading="lazy" src="img/3446cbda85.jpg" alt=""><span class="cap">הרב ניסים קרליץ</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב עובדיה יוסף (1 מתוך 3)"><input type="checkbox" value="c82ef6fa46" data-name="הרב עובדיה יוסף (1 מתוך 3)"><img loading="lazy" src="img/c82ef6fa46.jpg" alt=""><span class="cap">הרב עובדיה יוסף<em>1 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב עובדיה יוסף (2 מתוך 3)"><input type="checkbox" value="29ad66f1f7" data-name="הרב עובדיה יוסף (2 מתוך 3)"><img loading="lazy" src="img/29ad66f1f7.jpg" alt=""><span class="cap">הרב עובדיה יוסף<em>2 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב עובדיה יוסף (3 מתוך 3)"><input type="checkbox" value="12c31a8df5" data-name="הרב עובדיה יוסף (3 מתוך 3)"><img loading="lazy" src="img/12c31a8df5.jpg" alt=""><span class="cap">הרב עובדיה יוסף<em>3 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב עזריאל לעבאוויטש"><input type="checkbox" value="19fe8279b4" data-name="הרב עזריאל לעבאוויטש"><img loading="lazy" src="img/19fe8279b4.jpg" alt=""><span class="cap">הרב עזריאל לעבאוויטש</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב פריינד"><input type="checkbox" value="319abab322" data-name="הרב פריינד"><img loading="lazy" src="img/319abab322.jpg" alt=""><span class="cap">הרב פריינד</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב צדקה (1 מתוך 2)"><input type="checkbox" value="6edfbc84df" data-name="הרב צדקה (1 מתוך 2)"><img loading="lazy" src="img/6edfbc84df.jpg" alt=""><span class="cap">הרב צדקה<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב צדקה (2 מתוך 2)"><input type="checkbox" value="71026851ef" data-name="הרב צדקה (2 מתוך 2)"><img loading="lazy" src="img/71026851ef.jpg" alt=""><span class="cap">הרב צדקה<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב קוטלר"><input type="checkbox" value="d78f504773" data-name="הרב קוטלר"><img loading="lazy" src="img/d78f504773.jpg" alt=""><span class="cap">הרב קוטלר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב קרויזווירט"><input type="checkbox" value="26146b0db9" data-name="הרב קרויזווירט"><img loading="lazy" src="img/26146b0db9.jpg" alt=""><span class="cap">הרב קרויזווירט</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב קרונגלס"><input type="checkbox" value="0b9c1079a3" data-name="הרב קרונגלס"><img loading="lazy" src="img/0b9c1079a3.jpg" alt=""><span class="cap">הרב קרונגלס</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב ש.ז. ברוידא"><input type="checkbox" value="fe63af6eef" data-name="הרב ש.ז. ברוידא"><img loading="lazy" src="img/fe63af6eef.jpg" alt=""><span class="cap">הרב ש.ז. ברוידא</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שבדרון"><input type="checkbox" value="3bfa93b765" data-name="הרב שבדרון"><img loading="lazy" src="img/3bfa93b765.jpg" alt=""><span class="cap">הרב שבדרון</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שטיינמן (1 מתוך 5)"><input type="checkbox" value="2018137f40" data-name="הרב שטיינמן (1 מתוך 5)"><img loading="lazy" src="img/2018137f40.jpg" alt=""><span class="cap">הרב שטיינמן<em>1 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שטיינמן (2 מתוך 5)"><input type="checkbox" value="4f8b8640c8" data-name="הרב שטיינמן (2 מתוך 5)"><img loading="lazy" src="img/4f8b8640c8.jpg" alt=""><span class="cap">הרב שטיינמן<em>2 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שטיינמן (3 מתוך 5)"><input type="checkbox" value="2b7c1304a7" data-name="הרב שטיינמן (3 מתוך 5)"><img loading="lazy" src="img/2b7c1304a7.jpg" alt=""><span class="cap">הרב שטיינמן<em>3 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שטיינמן (4 מתוך 5)"><input type="checkbox" value="c7cfb09274" data-name="הרב שטיינמן (4 מתוך 5)"><img loading="lazy" src="img/c7cfb09274.jpg" alt=""><span class="cap">הרב שטיינמן<em>4 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שטיינמן (5 מתוך 5)"><input type="checkbox" value="26dd4a2b29" data-name="הרב שטיינמן (5 מתוך 5)"><img loading="lazy" src="img/26dd4a2b29.jpg" alt=""><span class="cap">הרב שטיינמן<em>5 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שיינברג (1 מתוך 2)"><input type="checkbox" value="37ffef03e1" data-name="הרב שיינברג (1 מתוך 2)"><img loading="lazy" src="img/37ffef03e1.jpg" alt=""><span class="cap">הרב שיינברג<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שיינברג (2 מתוך 2)"><input type="checkbox" value="8f6cb8202e" data-name="הרב שיינברג (2 מתוך 2)"><img loading="lazy" src="img/8f6cb8202e.jpg" alt=""><span class="cap">הרב שיינברג<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שיסגל"><input type="checkbox" value="b273af8335" data-name="הרב שיסגל"><img loading="lazy" src="img/b273af8335.jpg" alt=""><span class="cap">הרב שיסגל</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (1 מתוך 9)"><input type="checkbox" value="433a2568da" data-name="הרב שך (1 מתוך 9)"><img loading="lazy" src="img/433a2568da.jpg" alt=""><span class="cap">הרב שך<em>1 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (2 מתוך 9)"><input type="checkbox" value="c63af69fa7" data-name="הרב שך (2 מתוך 9)"><img loading="lazy" src="img/c63af69fa7.jpg" alt=""><span class="cap">הרב שך<em>2 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (3 מתוך 9)"><input type="checkbox" value="cde4864fda" data-name="הרב שך (3 מתוך 9)"><img loading="lazy" src="img/cde4864fda.jpg" alt=""><span class="cap">הרב שך<em>3 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (4 מתוך 9)"><input type="checkbox" value="5747236493" data-name="הרב שך (4 מתוך 9)"><img loading="lazy" src="img/5747236493.jpg" alt=""><span class="cap">הרב שך<em>4 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (5 מתוך 9)"><input type="checkbox" value="a80009468c" data-name="הרב שך (5 מתוך 9)"><img loading="lazy" src="img/a80009468c.jpg" alt=""><span class="cap">הרב שך<em>5 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (6 מתוך 9)"><input type="checkbox" value="6b9c5b1c6c" data-name="הרב שך (6 מתוך 9)"><img loading="lazy" src="img/6b9c5b1c6c.jpg" alt=""><span class="cap">הרב שך<em>6 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (7 מתוך 9)"><input type="checkbox" value="802c8e60f8" data-name="הרב שך (7 מתוך 9)"><img loading="lazy" src="img/802c8e60f8.jpg" alt=""><span class="cap">הרב שך<em>7 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (8 מתוך 9)"><input type="checkbox" value="34969c253f" data-name="הרב שך (8 מתוך 9)"><img loading="lazy" src="img/34969c253f.jpg" alt=""><span class="cap">הרב שך<em>8 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך (9 מתוך 9)"><input type="checkbox" value="42376ff858" data-name="הרב שך (9 מתוך 9)"><img loading="lazy" src="img/42376ff858.jpg" alt=""><span class="cap">הרב שך<em>9 מתוך 9</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שכטר"><input type="checkbox" value="77c3014673" data-name="הרב שכטר"><img loading="lazy" src="img/77c3014673.jpg" alt=""><span class="cap">הרב שכטר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שמואל אוירבאך (1 מתוך 2)"><input type="checkbox" value="4ecd8c1251" data-name="הרב שמואל אוירבאך (1 מתוך 2)"><img loading="lazy" src="img/4ecd8c1251.jpg" alt=""><span class="cap">הרב שמואל אוירבאך<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שמואל אוירבאך (2 מתוך 2)"><input type="checkbox" value="ba071c5474" data-name="הרב שמואל אוירבאך (2 מתוך 2)"><img loading="lazy" src="img/ba071c5474.jpg" alt=""><span class="cap">הרב שמואל אוירבאך<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שמואל בירנבוים"><input type="checkbox" value="27636ba6ec" data-name="הרב שמואל בירנבוים"><img loading="lazy" src="img/27636ba6ec.jpg" alt=""><span class="cap">הרב שמואל בירנבוים</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שמולביץ"><input type="checkbox" value="527b25f748" data-name="הרב שמולביץ"><img loading="lazy" src="img/527b25f748.jpg" alt=""><span class="cap">הרב שמולביץ</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שמחה חזן"><input type="checkbox" value="18dcb04269" data-name="הרב שמחה חזן"><img loading="lazy" src="img/18dcb04269.jpg" alt=""><span class="cap">הרב שמחה חזן</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שמחה קוק"><input type="checkbox" value="3c38cb6aa5" data-name="הרב שמחה קוק"><img loading="lazy" src="img/3c38cb6aa5.jpg" alt=""><span class="cap">הרב שמחה קוק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ר&#x27; יוסף יצחק שניאורסון"><input type="checkbox" value="6c217eff49" data-name="ר&#x27; יוסף יצחק שניאורסון"><img loading="lazy" src="img/6c217eff49.jpg" alt=""><span class="cap">ר&#x27; יוסף יצחק שניאורסון</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ר&#x27; נחום רוטשטיין"><input type="checkbox" value="eedb894c9c" data-name="ר&#x27; נחום רוטשטיין"><img loading="lazy" src="img/eedb894c9c.jpg" alt=""><span class="cap">ר&#x27; נחום רוטשטיין</span><span class="tick">&#10003;</span></label>
+</div>
+<h2 id="admorim">ב. אדמו״רים <small>74 תמונות</small></h2>
+<div class="grid">
+<label class="card" data-n="אלכסנדר (1 מתוך 2)"><input type="checkbox" value="d3282be509" data-name="אלכסנדר (1 מתוך 2)"><img loading="lazy" src="img/d3282be509.jpg" alt=""><span class="cap">אלכסנדר<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="אלכסנדר (2 מתוך 2)"><input type="checkbox" value="802cfdaad1" data-name="אלכסנדר (2 מתוך 2)"><img loading="lazy" src="img/802cfdaad1.jpg" alt=""><span class="cap">אלכסנדר<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="אמשינוב"><input type="checkbox" value="f768bbdfa8" data-name="אמשינוב"><img loading="lazy" src="img/f768bbdfa8.jpg" alt=""><span class="cap">אמשינוב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="אמשינוב ברוקלין"><input type="checkbox" value="88ae9fdb31" data-name="אמשינוב ברוקלין"><img loading="lazy" src="img/88ae9fdb31.jpg" alt=""><span class="cap">אמשינוב ברוקלין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="אנטניא"><input type="checkbox" value="b2cf0574ad" data-name="אנטניא"><img loading="lazy" src="img/b2cf0574ad.jpg" alt=""><span class="cap">אנטניא</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בואבוב (1 מתוך 2)"><input type="checkbox" value="baebddbf5b" data-name="בואבוב (1 מתוך 2)"><img loading="lazy" src="img/baebddbf5b.jpg" alt=""><span class="cap">בואבוב<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בואבוב (2 מתוך 2)"><input type="checkbox" value="0758896e91" data-name="בואבוב (2 מתוך 2)"><img loading="lazy" src="img/0758896e91.jpg" alt=""><span class="cap">בואבוב<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בוהוש בני ברק"><input type="checkbox" value="d8f690fc79" data-name="בוהוש בני ברק"><img loading="lazy" src="img/d8f690fc79.jpg" alt=""><span class="cap">בוהוש בני ברק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בוטאשון"><input type="checkbox" value="b17b7002b9" data-name="בוטאשון"><img loading="lazy" src="img/b17b7002b9.jpg" alt=""><span class="cap">בוטאשון</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בוסטון"><input type="checkbox" value="235e1dd499" data-name="בוסטון"><img loading="lazy" src="img/235e1dd499.jpg" alt=""><span class="cap">בוסטון</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בלאזוב"><input type="checkbox" value="49a2c75e63" data-name="בלאזוב"><img loading="lazy" src="img/49a2c75e63.jpg" alt=""><span class="cap">בלאזוב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בעלז (1 מתוך 5)"><input type="checkbox" value="162ae66394" data-name="בעלז (1 מתוך 5)"><img loading="lazy" src="img/162ae66394.jpg" alt=""><span class="cap">בעלז<em>1 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בעלז (2 מתוך 5)"><input type="checkbox" value="77ad2b0273" data-name="בעלז (2 מתוך 5)"><img loading="lazy" src="img/77ad2b0273.jpg" alt=""><span class="cap">בעלז<em>2 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בעלז (3 מתוך 5)"><input type="checkbox" value="9beabd6fbd" data-name="בעלז (3 מתוך 5)"><img loading="lazy" src="img/9beabd6fbd.jpg" alt=""><span class="cap">בעלז<em>3 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בעלז (4 מתוך 5)"><input type="checkbox" value="7c08a3c4b6" data-name="בעלז (4 מתוך 5)"><img loading="lazy" src="img/7c08a3c4b6.jpg" alt=""><span class="cap">בעלז<em>4 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בעלז (5 מתוך 5)"><input type="checkbox" value="7e308cfe3f" data-name="בעלז (5 מתוך 5)"><img loading="lazy" src="img/7e308cfe3f.jpg" alt=""><span class="cap">בעלז<em>5 מתוך 5</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="גור – הבית ישראל (1 מתוך 2)"><input type="checkbox" value="9d3de21693" data-name="גור – הבית ישראל (1 מתוך 2)"><img loading="lazy" src="img/9d3de21693.jpg" alt=""><span class="cap">גור – הבית ישראל<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="גור – הבית ישראל (2 מתוך 2)"><input type="checkbox" value="a480a714f0" data-name="גור – הבית ישראל (2 מתוך 2)"><img loading="lazy" src="img/a480a714f0.jpg" alt=""><span class="cap">גור – הבית ישראל<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="גור – הלב שמחה"><input type="checkbox" value="0bea5d441c" data-name="גור – הלב שמחה"><img loading="lazy" src="img/0bea5d441c.jpg" alt=""><span class="cap">גור – הלב שמחה</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="גור – הפני מנחם"><input type="checkbox" value="4516d45092" data-name="גור – הפני מנחם"><img loading="lazy" src="img/4516d45092.jpg" alt=""><span class="cap">גור – הפני מנחם</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב חנוך לייבוביץ"><input type="checkbox" value="9a8d525335" data-name="הרב חנוך לייבוביץ"><img loading="lazy" src="img/9a8d525335.jpg" alt=""><span class="cap">הרב חנוך לייבוביץ</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ואסלוי"><input type="checkbox" value="cd4f2dc7a4" data-name="ואסלוי"><img loading="lazy" src="img/cd4f2dc7a4.jpg" alt=""><span class="cap">ואסלוי</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ווידסלאוו"><input type="checkbox" value="61c0948831" data-name="ווידסלאוו"><img loading="lazy" src="img/61c0948831.jpg" alt=""><span class="cap">ווידסלאוו</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ויזניץ (1 מתוך 4)"><input type="checkbox" value="69f0a54db3" data-name="ויזניץ (1 מתוך 4)"><img loading="lazy" src="img/69f0a54db3.jpg" alt=""><span class="cap">ויזניץ<em>1 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ויזניץ (2 מתוך 4)"><input type="checkbox" value="a9eb5e1dbe" data-name="ויזניץ (2 מתוך 4)"><img loading="lazy" src="img/a9eb5e1dbe.jpg" alt=""><span class="cap">ויזניץ<em>2 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ויזניץ (3 מתוך 4)"><input type="checkbox" value="9ea3c0c9c7" data-name="ויזניץ (3 מתוך 4)"><img loading="lazy" src="img/9ea3c0c9c7.jpg" alt=""><span class="cap">ויזניץ<em>3 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ויזניץ (4 מתוך 4)"><input type="checkbox" value="2564747111" data-name="ויזניץ (4 מתוך 4)"><img loading="lazy" src="img/2564747111.jpg" alt=""><span class="cap">ויזניץ<em>4 מתוך 4</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ויזניץ מונסי"><input type="checkbox" value="2ad0f06942" data-name="ויזניץ מונסי"><img loading="lazy" src="img/2ad0f06942.jpg" alt=""><span class="cap">ויזניץ מונסי</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ויזניץ – האמרי חיים"><input type="checkbox" value="640eaa36bc" data-name="ויזניץ – האמרי חיים"><img loading="lazy" src="img/640eaa36bc.jpg" alt=""><span class="cap">ויזניץ – האמרי חיים</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="זוויל"><input type="checkbox" value="ff76d74c2b" data-name="זוויל"><img loading="lazy" src="img/ff76d74c2b.jpg" alt=""><span class="cap">זוויל</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="חב&quot;ד"><input type="checkbox" value="bca16ebbf3" data-name="חב&quot;ד"><img loading="lazy" src="img/bca16ebbf3.jpg" alt=""><span class="cap">חב&quot;ד</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="טאש מונטריאל"><input type="checkbox" value="071f06619e" data-name="טאש מונטריאל"><img loading="lazy" src="img/071f06619e.jpg" alt=""><span class="cap">טאש מונטריאל</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="טעמשוור"><input type="checkbox" value="c882aa45d3" data-name="טעמשוור"><img loading="lazy" src="img/c882aa45d3.jpg" alt=""><span class="cap">טעמשוור</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="טשיבין"><input type="checkbox" value="89535ca5b9" data-name="טשיבין"><img loading="lazy" src="img/89535ca5b9.jpg" alt=""><span class="cap">טשיבין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="טשרנוביל ארה&quot;ב"><input type="checkbox" value="4865a5e170" data-name="טשרנוביל ארה&quot;ב"><img loading="lazy" src="img/4865a5e170.jpg" alt=""><span class="cap">טשרנוביל ארה&quot;ב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="לובלין"><input type="checkbox" value="bb82b24551" data-name="לובלין"><img loading="lazy" src="img/bb82b24551.jpg" alt=""><span class="cap">לובלין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="לעלוב בני ברק"><input type="checkbox" value="6b92a1a586" data-name="לעלוב בני ברק"><img loading="lazy" src="img/6b92a1a586.jpg" alt=""><span class="cap">לעלוב בני ברק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="לעלוב–ירושלים"><input type="checkbox" value="f330b7e53c" data-name="לעלוב–ירושלים"><img loading="lazy" src="img/f330b7e53c.jpg" alt=""><span class="cap">לעלוב–ירושלים</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="מודזיץ"><input type="checkbox" value="1e7510f090" data-name="מודזיץ"><img loading="lazy" src="img/1e7510f090.jpg" alt=""><span class="cap">מודזיץ</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="מחנובקה"><input type="checkbox" value="f258ec6ba5" data-name="מחנובקה"><img loading="lazy" src="img/f258ec6ba5.jpg" alt=""><span class="cap">מחנובקה</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="מעליץ אשדוד"><input type="checkbox" value="d5f10a8b02" data-name="מעליץ אשדוד"><img loading="lazy" src="img/d5f10a8b02.jpg" alt=""><span class="cap">מעליץ אשדוד</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="נאוואמינסק"><input type="checkbox" value="8f518bac4e" data-name="נאוואמינסק"><img loading="lazy" src="img/8f518bac4e.jpg" alt=""><span class="cap">נאוואמינסק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="נדבורנא–חדרה"><input type="checkbox" value="b2870a0ccd" data-name="נדבורנא–חדרה"><img loading="lazy" src="img/b2870a0ccd.jpg" alt=""><span class="cap">נדבורנא–חדרה</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="נדבורנא–רעננה"><input type="checkbox" value="a64c8dc3b3" data-name="נדבורנא–רעננה"><img loading="lazy" src="img/a64c8dc3b3.jpg" alt=""><span class="cap">נדבורנא–רעננה</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="נדבורנה צפת"><input type="checkbox" value="ac6c7e46ad" data-name="נדבורנה צפת"><img loading="lazy" src="img/ac6c7e46ad.jpg" alt=""><span class="cap">נדבורנה צפת</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סאטמר (1 מתוך 3)"><input type="checkbox" value="387f65e858" data-name="סאטמר (1 מתוך 3)"><img loading="lazy" src="img/387f65e858.jpg" alt=""><span class="cap">סאטמר<em>1 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סאטמר (2 מתוך 3)"><input type="checkbox" value="be686639e4" data-name="סאטמר (2 מתוך 3)"><img loading="lazy" src="img/be686639e4.jpg" alt=""><span class="cap">סאטמר<em>2 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סאטמר (3 מתוך 3)"><input type="checkbox" value="93578de3ff" data-name="סאטמר (3 מתוך 3)"><img loading="lazy" src="img/93578de3ff.jpg" alt=""><span class="cap">סאטמר<em>3 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סטריקוב"><input type="checkbox" value="41602b1858" data-name="סטריקוב"><img loading="lazy" src="img/41602b1858.jpg" alt=""><span class="cap">סטריקוב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סיגעט סאטמאר"><input type="checkbox" value="22651ec7f3" data-name="סיגעט סאטמאר"><img loading="lazy" src="img/22651ec7f3.jpg" alt=""><span class="cap">סיגעט סאטמאר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סלונים (1 מתוך 3)"><input type="checkbox" value="f066ac2d62" data-name="סלונים (1 מתוך 3)"><img loading="lazy" src="img/f066ac2d62.jpg" alt=""><span class="cap">סלונים<em>1 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סלונים (2 מתוך 3)"><input type="checkbox" value="0f5b812b5e" data-name="סלונים (2 מתוך 3)"><img loading="lazy" src="img/0f5b812b5e.jpg" alt=""><span class="cap">סלונים<em>2 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סלונים (3 מתוך 3)"><input type="checkbox" value="cc16ca3a89" data-name="סלונים (3 מתוך 3)"><img loading="lazy" src="img/cc16ca3a89.jpg" alt=""><span class="cap">סלונים<em>3 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סערט ויזניץ"><input type="checkbox" value="7a143c8cb2" data-name="סערט ויזניץ"><img loading="lazy" src="img/7a143c8cb2.jpg" alt=""><span class="cap">סערט ויזניץ</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ספינקא"><input type="checkbox" value="db8cb9ee8b" data-name="ספינקא"><img loading="lazy" src="img/db8cb9ee8b.jpg" alt=""><span class="cap">ספינקא</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="סקוליען"><input type="checkbox" value="6f352ee9b6" data-name="סקוליען"><img loading="lazy" src="img/6f352ee9b6.jpg" alt=""><span class="cap">סקוליען</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ערלוי (1 מתוך 2)"><input type="checkbox" value="6b52f9061e" data-name="ערלוי (1 מתוך 2)"><img loading="lazy" src="img/6b52f9061e.jpg" alt=""><span class="cap">ערלוי<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="ערלוי (2 מתוך 2)"><input type="checkbox" value="8bf7a2ede8" data-name="ערלוי (2 מתוך 2)"><img loading="lazy" src="img/8bf7a2ede8.jpg" alt=""><span class="cap">ערלוי<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="פאפא (1 מתוך 2)"><input type="checkbox" value="092959cffb" data-name="פאפא (1 מתוך 2)"><img loading="lazy" src="img/092959cffb.jpg" alt=""><span class="cap">פאפא<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="פאפא (2 מתוך 2)"><input type="checkbox" value="87190365a7" data-name="פאפא (2 מתוך 2)"><img loading="lazy" src="img/87190365a7.jpg" alt=""><span class="cap">פאפא<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="פרימישלאן ב&quot;ב"><input type="checkbox" value="304770ebec" data-name="פרימישלאן ב&quot;ב"><img loading="lazy" src="img/304770ebec.jpg" alt=""><span class="cap">פרימישלאן ב&quot;ב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קאליב"><input type="checkbox" value="1998c91b52" data-name="קאליב"><img loading="lazy" src="img/1998c91b52.jpg" alt=""><span class="cap">קאליב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קאליש"><input type="checkbox" value="8065551e01" data-name="קאליש"><img loading="lazy" src="img/8065551e01.jpg" alt=""><span class="cap">קאליש</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קאפישניץ"><input type="checkbox" value="a5eca416dd" data-name="קאפישניץ"><img loading="lazy" src="img/a5eca416dd.jpg" alt=""><span class="cap">קאפישניץ</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קאשוי"><input type="checkbox" value="8ed2fd9944" data-name="קאשוי"><img loading="lazy" src="img/8ed2fd9944.jpg" alt=""><span class="cap">קאשוי</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קומרנא"><input type="checkbox" value="202e232c58" data-name="קומרנא"><img loading="lazy" src="img/202e232c58.jpg" alt=""><span class="cap">קומרנא</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קופישינצא"><input type="checkbox" value="2733657b67" data-name="קופישינצא"><img loading="lazy" src="img/2733657b67.jpg" alt=""><span class="cap">קופישינצא</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קלויזנבורג (1 מתוך 2)"><input type="checkbox" value="b27611447b" data-name="קלויזנבורג (1 מתוך 2)"><img loading="lazy" src="img/b27611447b.jpg" alt=""><span class="cap">קלויזנבורג<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קלויזנבורג (2 מתוך 2)"><input type="checkbox" value="4e98421566" data-name="קלויזנבורג (2 מתוך 2)"><img loading="lazy" src="img/4e98421566.jpg" alt=""><span class="cap">קלויזנבורג<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="קרעטשניף–סיגעט"><input type="checkbox" value="35cd8d268b" data-name="קרעטשניף–סיגעט"><img loading="lazy" src="img/35cd8d268b.jpg" alt=""><span class="cap">קרעטשניף–סיגעט</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="רחמסטריבקה (1 מתוך 2)"><input type="checkbox" value="f9d842f62f" data-name="רחמסטריבקה (1 מתוך 2)"><img loading="lazy" src="img/f9d842f62f.jpg" alt=""><span class="cap">רחמסטריבקה<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="רחמסטריבקה (2 מתוך 2)"><input type="checkbox" value="eed224488e" data-name="רחמסטריבקה (2 מתוך 2)"><img loading="lazy" src="img/eed224488e.jpg" alt=""><span class="cap">רחמסטריבקה<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="שומרי אמונים (1 מתוך 2)"><input type="checkbox" value="ca80ea39c9" data-name="שומרי אמונים (1 מתוך 2)"><img loading="lazy" src="img/ca80ea39c9.jpg" alt=""><span class="cap">שומרי אמונים<em>1 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="שומרי אמונים (2 מתוך 2)"><input type="checkbox" value="a2ee5beba8" data-name="שומרי אמונים (2 מתוך 2)"><img loading="lazy" src="img/a2ee5beba8.jpg" alt=""><span class="cap">שומרי אמונים<em>2 מתוך 2</em></span><span class="tick">&#10003;</span></label>
+</div>
+<h2 id="yachad">ג. תמונות משותפות <small>9 תמונות · שני רבנים באותה תמונה</small></h2>
+<div class="grid">
+<label class="card" data-n="הגרש&quot;ז אוירבאך + הרב אלישיב"><input type="checkbox" value="e7526a4162" data-name="הגרש&quot;ז אוירבאך + הרב אלישיב"><img loading="lazy" src="img/e7526a4162.jpg" alt=""><span class="cap">הגרש&quot;ז אוירבאך + הרב אלישיב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אלישיב + הרב ברלין"><input type="checkbox" value="c04c28786b" data-name="הרב אלישיב + הרב ברלין"><img loading="lazy" src="img/c04c28786b.jpg" alt=""><span class="cap">הרב אלישיב + הרב ברלין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב אלישיב + הרב קנייבסקי"><input type="checkbox" value="de15aad7a4" data-name="הרב אלישיב + הרב קנייבסקי"><img loading="lazy" src="img/de15aad7a4.jpg" alt=""><span class="cap">הרב אלישיב + הרב קנייבסקי</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב יפה + הרב ארלנגר"><input type="checkbox" value="bf042798ff" data-name="הרב יפה + הרב ארלנגר"><img loading="lazy" src="img/bf042798ff.jpg" alt=""><span class="cap">הרב יפה + הרב ארלנגר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב פוברסקי + הרב אוליפנט"><input type="checkbox" value="3f01adad15" data-name="הרב פוברסקי + הרב אוליפנט"><img loading="lazy" src="img/3f01adad15.jpg" alt=""><span class="cap">הרב פוברסקי + הרב אוליפנט</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב ש. אוירבאך + הרב דוד סולוביצ&#x27;יק"><input type="checkbox" value="734d28641d" data-name="הרב ש. אוירבאך + הרב דוד סולוביצ&#x27;יק"><img loading="lazy" src="img/734d28641d.jpg" alt=""><span class="cap">הרב ש. אוירבאך + הרב דוד סולוביצ&#x27;יק</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב ש. אוירבאך + הרב הדס"><input type="checkbox" value="3ca750f301" data-name="הרב ש. אוירבאך + הרב הדס"><img loading="lazy" src="img/3ca750f301.jpg" alt=""><span class="cap">הרב ש. אוירבאך + הרב הדס</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך + האדמו&quot;ר מסאטמר"><input type="checkbox" value="08a2168a09" data-name="הרב שך + האדמו&quot;ר מסאטמר"><img loading="lazy" src="img/08a2168a09.jpg" alt=""><span class="cap">הרב שך + האדמו&quot;ר מסאטמר</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב שך + הרב אוירבאך"><input type="checkbox" value="f14b76c546" data-name="הרב שך + הרב אוירבאך"><img loading="lazy" src="img/f14b76c546.jpg" alt=""><span class="cap">הרב שך + הרב אוירבאך</span><span class="tick">&#10003;</span></label>
+</div>
+<h2 id="illus">ד. איורים ורישומים <small>13 תמונות · קליפ־ארט בשחור־לבן — לא תצלומים</small></h2>
+<div class="grid">
+<label class="card" data-n="Relij (1 מתוך 3)"><input type="checkbox" value="b23adf3f82" data-name="Relij (1 מתוך 3)"><img loading="lazy" src="img/b23adf3f82.jpg" alt=""><span class="cap">Relij<em>1 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="Relij (2 מתוך 3)"><input type="checkbox" value="d3609f69b7" data-name="Relij (2 מתוך 3)"><img loading="lazy" src="img/d3609f69b7.jpg" alt=""><span class="cap">Relij<em>2 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="Relij (3 מתוך 3)"><input type="checkbox" value="e57c448b95" data-name="Relij (3 מתוך 3)"><img loading="lazy" src="img/e57c448b95.jpg" alt=""><span class="cap">Relij<em>3 מתוך 3</em></span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="בעל שם טוב"><input type="checkbox" value="b96c929465" data-name="בעל שם טוב"><img loading="lazy" src="img/b96c929465.jpg" alt=""><span class="cap">בעל שם טוב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="דמות חסיד"><input type="checkbox" value="5606011d3c" data-name="דמות חסיד"><img loading="lazy" src="img/5606011d3c.jpg" alt=""><span class="cap">דמות חסיד</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="דמות רב"><input type="checkbox" value="d90c48bacc" data-name="דמות רב"><img loading="lazy" src="img/d90c48bacc.jpg" alt=""><span class="cap">דמות רב</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הגר&quot;א"><input type="checkbox" value="17f7900b1c" data-name="הגר&quot;א"><img loading="lazy" src="img/17f7900b1c.jpg" alt=""><span class="cap">הגר&quot;א</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="החפץ חיים"><input type="checkbox" value="1a6ecd7b87" data-name="החפץ חיים"><img loading="lazy" src="img/1a6ecd7b87.jpg" alt=""><span class="cap">החפץ חיים</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הנצי&quot;ב מוולוז&#x27;ין"><input type="checkbox" value="4ed4990b02" data-name="הנצי&quot;ב מוולוז&#x27;ין"><img loading="lazy" src="img/4ed4990b02.jpg" alt=""><span class="cap">הנצי&quot;ב מוולוז&#x27;ין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב משה פיינשטיין"><input type="checkbox" value="080065e38e" data-name="הרב משה פיינשטיין"><img loading="lazy" src="img/080065e38e.jpg" alt=""><span class="cap">הרב משה פיינשטיין</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרב עובדיה יוסף"><input type="checkbox" value="6a3b0e8444" data-name="הרב עובדיה יוסף"><img loading="lazy" src="img/6a3b0e8444.jpg" alt=""><span class="cap">הרב עובדיה יוסף</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="הרמב&quot;ם"><input type="checkbox" value="ce509463f6" data-name="הרמב&quot;ם"><img loading="lazy" src="img/ce509463f6.jpg" alt=""><span class="cap">הרמב&quot;ם</span><span class="tick">&#10003;</span></label>
+<label class="card" data-n="רש&quot;י"><input type="checkbox" value="3986597683" data-name="רש&quot;י"><img loading="lazy" src="img/3986597683.jpg" alt=""><span class="cap">רש&quot;י</span><span class="tick">&#10003;</span></label>
+</div>
+
+</div>
+<div id="bar">
+<div class="inner">
+<button class="pri" onclick="finish()">סיימתי — הצג רשימה</button>
+<button class="sec" onclick="mail()">שלח במייל ליוסף</button>
+<button class="lnk" onclick="clr()">נקה הכל</button>
+<span id="count">נבחרו 0</span>
+</div>
+<div id="out" class="inner" style="display:none;flex-direction:column;align-items:stretch">
+<textarea id="txt" readonly></textarea>
+<div style="display:flex;gap:10px;margin-top:8px">
+<button class="pri" onclick="copy()">העתק רשימה</button>
+<button class="sec" onclick="window.print()">הדפס רשימה</button>
+</div></div></div>
+<script>var K='rabbanim-pick';
+function boxes(){return [].slice.call(document.querySelectorAll('.card input'))}
+function chosen(){return boxes().filter(function(b){return b.checked})}
+function upd(){document.getElementById('count').textContent='נבחרו '+chosen().length;
+ try{localStorage.setItem(K,JSON.stringify(chosen().map(function(b){return b.value})))}catch(e){}}
+boxes().forEach(function(b){b.addEventListener('change',function(){
+ b.closest('.card').classList.toggle('on',b.checked);upd()})});
+try{var s=JSON.parse(localStorage.getItem(K)||'[]');
+ boxes().forEach(function(b){if(s.indexOf(b.value)>-1){b.checked=true;b.closest('.card').classList.add('on')}})}catch(e){}
+upd();
+document.getElementById('q').addEventListener('input',function(e){var v=e.target.value.trim();
+ document.querySelectorAll('.card').forEach(function(c){
+  c.classList.toggle('hide', v!=='' && c.dataset.n.indexOf(v)===-1)})});
+function list(){return chosen().map(function(b,i){return (i+1)+'. '+b.dataset.name}).join('\n')}
+function finish(){var t=list();if(!t){alert('עדיין לא נבחרה אף תמונה');return}
+ document.getElementById('txt').value='רשימת התמונות להדפסה:\n\n'+t;
+ document.getElementById('out').style.display='flex';
+ document.getElementById('txt').scrollIntoView({block:'nearest'})}
+function copy(){var a=document.getElementById('txt');a.select();
+ try{document.execCommand('copy');alert('הרשימה הועתקה — אפשר להדביק בוואטסאפ או במייל')}catch(e){alert('לא הצלחתי להעתיק, אפשר לסמן ידנית')}}
+function mail(){var t=list();if(!t){alert('עדיין לא נבחרה אף תמונה');return}
+ location.href='mailto:6742853@gmail.com?subject='+encodeURIComponent('בחירת תמונות רבנים להדפסה')+
+ '&body='+encodeURIComponent('רשימת התמונות להדפסה:\n\n'+t+'\n\nבברכה,\nשלמה לינצנר')}
+function clr(){if(!confirm('לנקות את כל הסימונים?'))return;
+ boxes().forEach(function(b){b.checked=false;b.closest('.card').classList.remove('on')});
+ upd();document.getElementById('out').style.display='none'}</script></body></html>
