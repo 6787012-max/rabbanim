@@ -9,9 +9,14 @@ OUT = 'candidates'
 A3_LONG, A3_SHORT = 2480, 1754
 MIN_LONG, MIN_SHORT = 900, 600     # רצפה נמוכה — עדיף נכון וקטן מאשר גדול ולא נכון
 UA = 'RabbiPhotoFetch/1.0 (contact: 6742853@gmail.com)'
-SKIP = re.compile(r'(commons-logo|wiki|icon|flag|map|edit-|ambox|question|'
-                  r'disambig|crystal|symbol|nuvola|emblem|coat_of_arms|'
-                  r'p_vip|gnome|folder|\.svg$)', re.I)
+SKIP = re.compile(r'(commons-logo|wikiquote|wikisource|wikidata|icon|flag|'
+                  r'edit-|ambox|question|disambig|crystal|symbol|nuvola|'
+                  r'emblem|coat[_ ]of[_ ]arms|p_vip|gnome|folder|logo|'
+                  r'\.svg$|\.ogg$|\.webm$)', re.I)
+
+
+def bad(u):
+    return bool(SKIP.search(urllib.parse.unquote(u).rsplit('/', 1)[-1]))
 
 
 def get(url, timeout=45):
@@ -38,7 +43,7 @@ def imageinfo(api, titles):
                            'iiprop': 'url|size|extmetadata'})
             for p in d.get('query', {}).get('pages', []):
                 for ii in (p.get('imageinfo') or []):
-                    if not ii.get('url') or SKIP.search(ii['url']):
+                    if not ii.get('url') or bad(ii['url']):
                         continue
                     lic = (ii.get('extmetadata', {}).get('LicenseShortName', {})
                            .get('value', ''))
@@ -69,7 +74,7 @@ def from_article(api, query):
             files = []
             for p in d.get('query', {}).get('pages', []):
                 files += [im['title'] for im in (p.get('images') or [])]
-            files = [f for f in files if not SKIP.search(f)]
+            files = [f for f in files if not bad(f)]
             for c in imageinfo(api, files):
                 c['src'] = api.split('//')[1].split('.')[0] + ':' + t[:40]
                 res.append(c)
