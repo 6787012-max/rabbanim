@@ -15,15 +15,12 @@ jobs:
           pip install --quiet torch torchvision --index-url https://download.pytorch.org/whl/cpu
           pip install --quiet "numpy<2" opencv-python-headless pillow
           pip install --quiet basicsr facexlib gfpgan realesrgan
-          python - <<'EOF'
-          import basicsr, os, re
-          p = os.path.join(os.path.dirname(basicsr.__file__), 'data', 'degradations.py')
-          s = open(p).read().replace(
-            'from torchvision.transforms.functional_tensor import rgb_to_grayscale',
-            'from torchvision.transforms.functional import rgb_to_grayscale')
-          open(p,'w').write(s)
-          print('basicsr patched')
-          EOF
+          # לתקן את basicsr בלי לייבא אותו — הייבוא עצמו הוא מה שקורס
+          F=$(find "$(python -c 'import site;print(site.getsitepackages()[0])')/basicsr/data" -name degradations.py)
+          echo "patching $F"
+          sed -i 's/from torchvision\.transforms\.functional_tensor import rgb_to_grayscale/from torchvision.transforms.functional import rgb_to_grayscale/' "$F"
+          grep -n 'rgb_to_grayscale' "$F" | head -2
+          python -c "import basicsr, realesrgan; print('imports OK')"
       - name: Upscale
         run: python wf/upscale.py
       - uses: actions/upload-artifact@v4
