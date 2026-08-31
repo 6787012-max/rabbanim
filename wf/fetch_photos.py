@@ -1,86 +1,98 @@
 # -*- coding: utf-8 -*-
-"""רץ על GitHub Actions (אינטרנט חופשי, בלי נטפרי).
-מחפש תמונות ברזולוציה גבוהה לכל רב. v2 — Bing + Wikimedia + Openverse,
-והגודל נמדד בפועל עם PIL ולא לפי מטא-דאטה."""
+"""v3 — ויקיפדיה/ויקישיתוף בלבד.
+Bing נזרק: הוא החזיר תמונות שאין להן שום קשר לשאילתה (עוף מטוגן, אנימה, פסלים).
+כאן הזהות מובטחת: התמונה נלקחת מתוך הערך של אותו רב, או מקטגוריה על שמו."""
 import os, re, io, json, time, hashlib, urllib.parse, urllib.request
 from PIL import Image
 
 OUT = 'candidates'
-A3_LONG, A3_SHORT = 2480, 1754        # A3 ב-150dpi
-MIN_LONG, MIN_SHORT = 1400, 1000      # רצפה: גם שיפור חלקי שווה שמירה
-UA = ('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
-      '(KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36')
+A3_LONG, A3_SHORT = 2480, 1754
+MIN_LONG, MIN_SHORT = 900, 600     # רצפה נמוכה — עדיף נכון וקטן מאשר גדול ולא נכון
+UA = 'RabbiPhotoFetch/1.0 (contact: 6742853@gmail.com)'
+SKIP = re.compile(r'(commons-logo|wiki|icon|flag|map|edit-|ambox|question|'
+                  r'disambig|crystal|symbol|nuvola|emblem|coat_of_arms|'
+                  r'p_vip|gnome|folder|\.svg$)', re.I)
 
 
-def get(url, timeout=40, headers=None):
+def get(url, timeout=45):
     req = urllib.request.Request(url)
     req.add_header('User-Agent', UA)
-    req.add_header('Accept-Language', 'he,en;q=0.8')
-    for k, v in (headers or {}).items():
-        req.add_header(k, v)
     with urllib.request.urlopen(req, timeout=timeout) as r:
         return r.read()
 
 
-def bing(query, limit=30):
-    """גריפת Bing Images — עובד מ-IP של datacenter, בניגוד ל-DDG."""
-    urls = []
-    for qft in ('+filterui:imagesize-wallpaper', '+filterui:imagesize-large', ''):
-        try:
-            u = ('https://www.bing.com/images/search?q=' + urllib.parse.quote(query) +
-                 '&qft=' + urllib.parse.quote(qft) + '&form=IRFLTR&first=1')
-            h = get(u).decode('utf-8', 'replace')
-            for m in re.finditer(r'murl&quot;:&quot;(.*?)&quot;', h):
-                urls.append(m.group(1).replace('\\/', '/'))
-            for m in re.finditer(r'"murl":"(.*?)"', h):
-                urls.append(m.group(1).replace('\\/', '/'))
-        except Exception as e:
-            print('   bing err:', str(e)[:60])
-        time.sleep(1)
-        if len(urls) >= limit:
-            break
-    out, seen = [], set()
-    for u in urls:
-        if u not in seen:
-            seen.add(u)
-            out.append({'url': u, 'src': 'bing', 'license': '', 'page': ''})
-    return out[:limit]
+def japi(api, params):
+    params.update({'format': 'json', 'formatversion': '2'})
+    u = api + '?' + urllib.parse.urlencode(params)
+    return json.loads(get(u).decode())
 
 
-def wikimedia(query, limit=12):
+def imageinfo(api, titles):
+    """מביא URL וגודל לרשימת קבצים."""
     out = []
-    for api in ('https://commons.wikimedia.org/w/api.php',
-                'https://he.wikipedia.org/w/api.php'):
+    for i in range(0, len(titles), 25):
+        chunk = titles[i:i + 25]
         try:
-            u = (api + '?action=query&generator=search&gsrsearch=' +
-                 urllib.parse.quote(query) +
-                 '&gsrnamespace=6&gsrlimit=%d&prop=imageinfo' % limit +
-                 '&iiprop=url|size|extmetadata&format=json')
-            d = json.loads(get(u).decode())
-            for p in (d.get('query', {}).get('pages', {}) or {}).values():
-                ii = (p.get('imageinfo') or [{}])[0]
-                if ii.get('url'):
+            d = japi(api, {'action': 'query', 'titles': '|'.join(chunk),
+                           'prop': 'imageinfo',
+                           'iiprop': 'url|size|extmetadata'})
+            for p in d.get('query', {}).get('pages', []):
+                for ii in (p.get('imageinfo') or []):
+                    if not ii.get('url') or SKIP.search(ii['url']):
+                        continue
                     lic = (ii.get('extmetadata', {}).get('LicenseShortName', {})
                            .get('value', ''))
-                    out.append({'url': ii['url'], 'src': 'wikimedia',
+                    out.append({'url': ii['url'], 'w': ii.get('width', 0),
+                                'h': ii.get('height', 0),
                                 'license': re.sub('<[^>]+>', '', lic)[:50],
-                                'page': p.get('title', '')[:70]})
+                                'page': p.get('title', '')[:80]})
         except Exception as e:
-            print('   wikimedia err:', str(e)[:60])
+            print('   imageinfo err:', str(e)[:70])
     return out
 
 
-def openverse(query, limit=15):
+def from_article(api, query):
+    """מוצא את הערך של הרב ומחזיר את כל התמונות שבתוכו."""
+    res = []
     try:
-        u = ('https://api.openverse.org/v1/images/?q=' + urllib.parse.quote(query) +
-             '&page_size=%d' % limit)
-        d = json.loads(get(u).decode())
-        return [{'url': r['url'], 'src': 'openverse',
-                 'license': r.get('license', ''), 'page': r.get('title', '')[:70]}
-                for r in d.get('results', []) if r.get('url')]
+        d = japi(api, {'action': 'query', 'list': 'search',
+                       'srsearch': query, 'srlimit': 3})
+        titles = [s['title'] for s in d.get('query', {}).get('search', [])]
     except Exception as e:
-        print('   openverse err:', str(e)[:60])
-        return []
+        print('   search err:', str(e)[:70])
+        return res
+    for t in titles[:2]:
+        print('   ערך:', t)
+        try:
+            d = japi(api, {'action': 'query', 'titles': t, 'prop': 'images',
+                           'imlimit': 40})
+            files = []
+            for p in d.get('query', {}).get('pages', []):
+                files += [im['title'] for im in (p.get('images') or [])]
+            files = [f for f in files if not SKIP.search(f)]
+            for c in imageinfo(api, files):
+                c['src'] = api.split('//')[1].split('.')[0] + ':' + t[:40]
+                res.append(c)
+        except Exception as e:
+            print('   images err:', str(e)[:70])
+    return res
+
+
+def from_commons_category(query):
+    """קטגוריה בוויקישיתוף על שם הרב — כל התמונות שבה."""
+    api = 'https://commons.wikimedia.org/w/api.php'
+    res = []
+    try:
+        d = japi(api, {'action': 'query', 'list': 'search',
+                       'srsearch': 'incategory:"%s" OR %s' % (query, query),
+                       'srnamespace': 6, 'srlimit': 25})
+        files = [s['title'] for s in d.get('query', {}).get('search', [])]
+        for c in imageinfo(api, files):
+            c['src'] = 'commons'
+            res.append(c)
+    except Exception as e:
+        print('   commons err:', str(e)[:70])
+    return res
 
 
 def slug(name):
@@ -96,51 +108,47 @@ def main():
         sl = slug(name)
         d = os.path.join(OUT, sl)
         os.makedirs(d, exist_ok=True)
-        print('\n=== %s (%s)' % (name, sl))
+        print('\n=== %s' % name)
         cands = []
         for q in t['queries']:
             print('  q:', q)
-            cands += bing(q)
-            cands += wikimedia(q)
-            cands += openverse(q)
-            time.sleep(1)
-        seen, measured = set(), []
+            cands += from_article('https://he.wikipedia.org/w/api.php', q)
+            cands += from_article('https://en.wikipedia.org/w/api.php', q)
+            cands += from_commons_category(q)
+            time.sleep(0.8)
+        seen, kept = set(), []
+        cands.sort(key=lambda c: -(c['w'] * c['h']))
         for c in cands:
-            if not c['url'] or c['url'] in seen or len(measured) >= 40:
+            if c['url'] in seen or len(kept) >= 6:
                 continue
             seen.add(c['url'])
-            try:
-                b = get(c['url'], timeout=35)
-                if len(b) < 60000:
-                    continue
-                im = Image.open(io.BytesIO(b))
-                w, h = im.size
-                lo, sh = max(w, h), min(w, h)
-                if lo < MIN_LONG or sh < MIN_SHORT:
-                    continue
-                c.update({'w': w, 'h': h, 'bytes': len(b), 'data': b,
-                          'a3': lo >= A3_LONG and sh >= A3_SHORT,
-                          'fmt': (im.format or '').lower()})
-                measured.append(c)
-            except Exception:
+            lo, sh = max(c['w'], c['h']), min(c['w'], c['h'])
+            if lo < MIN_LONG or sh < MIN_SHORT:
                 continue
-        measured.sort(key=lambda c: -(c['w'] * c['h']))
-        kept = []
-        for c in measured[:5]:
-            ext = '.png' if c['fmt'] == 'png' else '.jpg'
-            fn = '%02d%s' % (len(kept) + 1, ext)
-            open(os.path.join(d, fn), 'wb').write(c.pop('data'))
-            c['file'] = fn
-            kept.append(c)
-            print('    v %s %dx%d %.1fMB [%s]%s' % (fn, c['w'], c['h'],
-                  c['bytes'] / 1048576, c['src'], ' A3' if c['a3'] else ''))
+            try:
+                b = get(c['url'], timeout=60)
+                im = Image.open(io.BytesIO(b))
+                if im.mode not in ('RGB', 'L', 'RGBA', 'P'):
+                    continue
+                ext = '.png' if (im.format or '').lower() == 'png' else '.jpg'
+                fn = '%02d%s' % (len(kept) + 1, ext)
+                open(os.path.join(d, fn), 'wb').write(b)
+                c['file'] = fn
+                c['bytes'] = len(b)
+                c['a3'] = lo >= A3_LONG and sh >= A3_SHORT
+                kept.append(c)
+                print('    v %s %dx%d %s [%s]' % (fn, c['w'], c['h'],
+                      'A3' if c['a3'] else '', c['src'][:34]))
+            except Exception as e:
+                print('    x', str(e)[:60])
         if not kept:
-            print('    -- אין מועמד מתאים')
+            print('    -- לא נמצא כלום')
         manifest.append({'name': name, 'slug': sl, 'candidates': kept})
     json.dump(manifest, io.open(os.path.join(OUT, 'manifest.json'), 'w',
                                 encoding='utf-8'), ensure_ascii=False, indent=1)
-    n3 = sum(1 for m in manifest if any(c['a3'] for c in m['candidates']))
-    print('\n=== %d/%d רבנים עם מועמד בגודל A3' % (n3, len(manifest)))
+    got = sum(1 for m in manifest if m['candidates'])
+    a3 = sum(1 for m in manifest if any(c['a3'] for c in m['candidates']))
+    print('\n=== %d/%d עם תמונה · %d מהן בגודל A3' % (got, len(manifest), a3))
 
 
 if __name__ == '__main__':
