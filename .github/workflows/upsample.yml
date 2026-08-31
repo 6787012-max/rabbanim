@@ -1,0 +1,30 @@
+name: upscale-sample
+on:
+  workflow_dispatch:
+jobs:
+  up:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install Real-ESRGAN
+        run: |
+          pip install --quiet torch torchvision --index-url https://download.pytorch.org/whl/cpu
+          pip install --quiet "numpy<2" opencv-python-headless pillow
+          pip install --quiet basicsr facexlib gfpgan realesrgan
+          # לתקן את basicsr בלי לייבא אותו — הייבוא עצמו הוא מה שקורס
+          F=$(find "$(python -c 'import site;print(site.getsitepackages()[0])')/basicsr/data" -name degradations.py)
+          echo "patching $F"
+          sed -i 's/from torchvision\.transforms\.functional_tensor import rgb_to_grayscale/from torchvision.transforms.functional import rgb_to_grayscale/' "$F"
+          grep -n 'rgb_to_grayscale' "$F" | head -2
+          python -c "import basicsr, realesrgan; print('imports OK')"
+      - name: Upscale
+        run: python wf/upsample.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: upscaled-sample
+          path: up_sample_out
+          retention-days: 7
