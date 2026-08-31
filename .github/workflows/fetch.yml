@@ -1,0 +1,20 @@
+name: fetch-rabbi-photos
+on:
+  workflow_dispatch:
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Fetch candidates
+        run: python wf/fetch_photos.py
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: candidates
+          path: candidates
+          retention-days: 7
